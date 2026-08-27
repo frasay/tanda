@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trips &amp; Adventures</title>
+<meta content="Trips &amp; Adventures" property="og:title"/>
+<meta content="A chic pastel notebook for planning and capturing your video project moments — morning, afternoon and evening." property="og:description"/>
+<meta content="https://cdn.simulationtheory.ai/gasset/?asset=img&amp;prompt=pastel watercolor travel journal with camera and film icons&amp;w=640&amp;h=640&amp;style=professional" property="og:image"/>
+<meta content="website" property="og:type"/>
+<link href="https://cdn.simulationtheory.ai/gasset/?asset=img&amp;prompt=pastel compass icon minimal flat cute&amp;w=64&amp;h=64&amp;transparent=true" rel="icon"/>
+<script src="assets/script_46bbd211.js"></script>
+<link href="assets/style_173a4a73.css" rel="stylesheet"/>
+<link href="assets/style_277c1163.css" rel="stylesheet"/>
+<script crossorigin="" src="assets/script_2c111c90.js"></script>
+<script src="assets/script_cf26dce4.js"></script>
+<script src="assets/script_e588cc62.js"></script>
+<style>
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    src: url('/chat/webfonts/fa-regular-400.woff2') format('woff2'),
+        url('/chat/webfonts/fa-regular-400.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    src: url('/chat/webfonts/fa-solid-900.woff2') format('woff2'),
+        url('/chat/webfonts/fa-solid-900.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Font Awesome 6 Brands';
+    src: url('/chat/webfonts/fa-brands-400.woff2') format('woff2'),
+        url('/chat/webfonts/fa-brands-400.ttf') format('truetype');
+}
+body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.display-font { font-family: Georgia, 'Times New Roman', serif; }
+.blob { filter: blur(70px); opacity: .55; }
+.sortable-ghost { opacity: .35; }
+.sortable-chosen { transform: rotate(1.5deg); }
+::-webkit-scrollbar { height: 8px; width: 8px; }
+::-webkit-scrollbar-thumb { background: #d9cff0; border-radius: 99px; }
+input[type="date"]::-webkit-calendar-picker-indicator { cursor: pointer; opacity: .6; }
+</style>
+<script>
+                window.load_data_from_csv = (filename) => {
+                    // Implementation needed when code is downloaded
+                };
+
+                window.save_data_to_csv = (filename, data) => {
+                    // Implementation needed when code is downloaded
+                };
+
+                window.call_llm = (system_prompt, user_messages, json_fields) => {
+                    // Implementation needed when code is downloaded
+                };
+            </script></head>
+<body class="min-h-screen bg-[#FBF7F2] text-[#4A4258] antialiased relative overflow-x-hidden">
+<div class="pointer-events-none fixed inset-0 -z-10">
+<div class="blob absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[#E9D8FD]"></div>
+<div class="blob absolute top-1/3 -right-32 w-[28rem] h-[28rem] rounded-full bg-[#CDEFE3]"></div>
+<div class="blob absolute bottom-0 left-1/4 w-96 h-96 rounded-full bg-[#FFE0CC]"></div>
+<div class="blob absolute bottom-20 right-1/3 w-72 h-72 rounded-full bg-[#FBD9E5]"></div>
+</div>
+<div class="min-h-screen flex items-center justify-center p-6" id="setupScreen">
+<div class="w-full max-w-xl bg-white/70 backdrop-blur-xl rounded-[2.5rem] shadow-xl shadow-purple-100 p-8 sm:p-12 text-center animate__animated animate__fadeInUp">
+<div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-[#E9D8FD] via-[#FBD9E5] to-[#FFE0CC] shadow-inner mb-6">
+<i class="fas fa-compass text-3xl text-[#8B6FC9]"></i>
+</div>
+<p class="uppercase tracking-[0.35em] text-xs text-[#B29ADB] font-semibold mb-2">a video project notebook</p>
+<h1 class="display-font italic text-4xl sm:text-5xl text-[#5C4B8B] mb-3">Trips &amp; Adventures</h1>
+<p class="text-sm text-[#8A7FA0] mb-8">Pick your dates. Then capture every morning, afternoon &amp; evening — notes, links, images &amp; sparks of genius.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+<label class="flex-1 text-left">
+<span class="block text-xs font-semibold uppercase tracking-widest text-[#B29ADB] mb-1 ml-1">First day</span>
+<input class="w-full rounded-2xl border-2 border-[#E9D8FD] bg-white/80 px-4 py-3 text-[#5C4B8B] focus:outline-none focus:border-[#C9AFF0] transition-colors" id="startDate" type="date"/>
+</label>
+<label class="flex-1 text-left">
+<span class="block text-xs font-semibold uppercase tracking-widest text-[#7FC8A9] mb-1 ml-1">Last day</span>
+<input class="w-full rounded-2xl border-2 border-[#CDEFE3] bg-white/80 px-4 py-3 text-[#3E7D63] focus:outline-none focus:border-[#8FD9BD] transition-colors" id="endDate" type="date"/>
+</label>
+</div>
+<input class="w-full rounded-2xl border-2 border-[#FFE0CC] bg-white/80 px-4 py-3 text-center text-[#B06A3B] placeholder-[#D9B69B] focus:outline-none focus:border-[#F5B98A] transition-colors mb-8" id="tripTitle" maxlength="60" placeholder="Name this adventure… (e.g. Lisbon Rooftops Doc)" type="text"/>
+<button class="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#B79CE8] via-[#EFA3C0] to-[#F5B98A] text-white font-semibold tracking-wide shadow-lg shadow-pink-100 hover:shadow-xl hover:scale-105 transition-all duration-300" id="beginBtn">
+<i class="fas fa-clapperboard"></i> Begin the Adventure
+      <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+</button>
+<p class="mt-6 text-xs text-[#B8AFC9] italic" id="setupQuote"></p>
+</div>
+</div>
+<div class="hidden" id="appScreen">
+<header class="sticky top-0 z-40 bg-white/70 backdrop-blur-xl border-b border-[#EFE7FB]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-3 mr-auto">
+<div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#E9D8FD] via-[#FBD9E5] to-[#FFE0CC] flex items-center justify-center shadow-inner">
+<i class="fas fa-compass text-[#8B6FC9] text-lg"></i>
+</div>
+<div>
+<p class="uppercase tracking-[0.3em] text-[10px] text-[#B29ADB] font-bold leading-none">Trips &amp; Adventures</p>
+<input class="display-font italic text-lg sm:text-xl text-[#5C4B8B] bg-transparent focus:outline-none focus:border-b border-[#C9AFF0] w-56 sm:w-72" id="titleEdit" maxlength="60" type="text"/>
+</div>
+</div>
+<div class="relative">
+<i class="fas fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-[#C9BEDD] text-sm"></i>
+<input class="pl-9 pr-3 py-2 rounded-full bg-[#F5F0FC] border border-[#E9D8FD] text-sm text-[#5C4B8B] placeholder-[#C9BEDD] focus:outline-none focus:border-[#C9AFF0] w-40 sm:w-52 transition-all" id="searchBox" placeholder="Search notes…" type="text"/>
+</div>
+<button class="px-4 py-2 rounded-full bg-[#EDE4FB] text-[#7B5FBF] text-sm font-semibold hover:bg-[#E0D0F7] transition-colors inline-flex items-center gap-2" data-action="ai-recap">
+<i class="fas fa-wand-magic-sparkles"></i><span class="hidden sm:inline">AI Recap</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-[#DCF3E8] text-[#3E7D63] text-sm font-semibold hover:bg-[#C8ECDB] transition-colors inline-flex items-center gap-2" data-action="export-csv">
+<i class="fas fa-file-arrow-down"></i><span class="hidden sm:inline">Export</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-[#FFE9E0] text-[#C06A4A] text-sm font-semibold hover:bg-[#FFDCCC] transition-colors inline-flex items-center gap-2" data-action="new-trip">
+<i class="fas fa-plus"></i><span class="hidden sm:inline">New Trip</span>
+</button>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 pb-3 flex gap-2 overflow-x-auto" id="dayNav"></div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+<div class="mb-8 text-center" id="rangeBanner"></div>
+<div class="space-y-10" id="daysContainer"></div>
+<footer class="text-center py-12">
+<p class="text-xs text-[#B8AFC9] italic" id="footerQuote"></p>
+</footer>
+</main>
+</div>
+<div class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 bg-[#4A4258]/30 backdrop-blur-sm" id="composerModal">
+<div class="w-full sm:max-w-lg bg-white rounded-t-[2rem] sm:rounded-[2rem] shadow-2xl p-6 sm:p-8 animate__animated animate__fadeInUp animate__faster max-h-[90vh] overflow-y-auto">
+<div class="flex items-center justify-between mb-5">
+<h2 class="display-font italic text-2xl text-[#5C4B8B]" id="composerTitle">New moment</h2>
+<button class="w-9 h-9 rounded-full bg-[#F5F0FC] text-[#8B6FC9] hover:bg-[#E9D8FD] transition-colors" data-action="close-composer"><i class="fas fa-xmark"></i></button>
+</div>
+<div class="flex gap-2 mb-5" id="typeTabs">
+<button class="type-tab flex-1 py-2.5 rounded-2xl text-sm font-semibold transition-all" data-type="text"><i class="fas fa-pen-fancy mr-1.5"></i>Note</button>
+<button class="type-tab flex-1 py-2.5 rounded-2xl text-sm font-semibold transition-all" data-type="link"><i class="fas fa-link mr-1.5"></i>Link</button>
+<button class="type-tab flex-1 py-2.5 rounded-2xl text-sm font-semibold transition-all" data-type="image"><i class="fas fa-image mr-1.5"></i>Image</button>
+</div>
+<div class="space-y-4" id="paneText">
+<textarea class="w-full rounded-2xl border-2 border-[#E9D8FD] bg-[#FBF9FE] px-4 py-3 text-sm text-[#4A4258] placeholder-[#C9BEDD] focus:outline-none focus:border-[#C9AFF0] resize-none" id="noteContent" placeholder="Shot list, vibe, a feeling, dialogue to remember…" rows="4"></textarea>
+<div>
+<p class="text-xs font-semibold uppercase tracking-widest text-[#B29ADB] mb-2">Tags</p>
+<div class="flex flex-wrap gap-2 mb-2" id="quickTags"></div>
+<input class="w-full rounded-xl border border-[#E9D8FD] bg-white px-3 py-2 text-xs text-[#5C4B8B] placeholder-[#C9BEDD] focus:outline-none focus:border-[#C9AFF0]" id="noteTags" placeholder="custom tags, comma separated" type="text"/>
+</div>
+</div>
+<div class="hidden space-y-4" id="paneLink">
+<input class="w-full rounded-2xl border-2 border-[#CDEFE3] bg-[#F8FDFB] px-4 py-3 text-sm text-[#3E7D63] placeholder-[#A5D6BF] focus:outline-none focus:border-[#8FD9BD]" id="linkUrl" placeholder="https://… (reference, inspo, location)" type="url"/>
+<input class="w-full rounded-2xl border-2 border-[#CDEFE3] bg-[#F8FDFB] px-4 py-3 text-sm text-[#3E7D63] placeholder-[#A5D6BF] focus:outline-none focus:border-[#8FD9BD]" id="linkLabel" placeholder="What is this? (optional label)" type="text"/>
+</div>
+<div class="hidden space-y-4" id="paneImage">
+<input class="w-full rounded-2xl border-2 border-[#FFE0CC] bg-[#FFFBF7] px-4 py-3 text-sm text-[#B06A3B] placeholder-[#E5C3A6] focus:outline-none focus:border-[#F5B98A]" id="imageUrl" placeholder="Paste image URL…" type="url"/>
+<div class="flex items-center gap-2">
+<div class="flex-1 h-px bg-[#F5E6D8]"></div>
+<span class="text-[10px] uppercase tracking-widest text-[#D9B69B] font-bold">or dream one up</span>
+<div class="flex-1 h-px bg-[#F5E6D8]"></div>
+</div>
+<div class="flex gap-2">
+<input class="flex-1 rounded-2xl border-2 border-[#FBD9E5] bg-[#FEF9FB] px-4 py-3 text-sm text-[#B04E75] placeholder-[#E8B3C8] focus:outline-none focus:border-[#F2A9C4]" id="imagePrompt" placeholder="Describe a moodboard image…" type="text"/>
+<button class="px-4 rounded-2xl bg-gradient-to-br from-[#EFA3C0] to-[#F5B98A] text-white shadow hover:scale-105 transition-transform" data-action="generate-image"><i class="fas fa-wand-sparkles"></i></button>
+</div>
+<input class="w-full rounded-2xl border-2 border-[#FFE0CC] bg-[#FFFBF7] px-4 py-3 text-sm text-[#B06A3B] placeholder-[#E5C3A6] focus:outline-none focus:border-[#F5B98A]" id="imageCaption" placeholder="Caption (optional)" type="text"/>
+<div class="hidden rounded-2xl overflow-hidden border-2 border-[#FFE0CC]" id="imagePreviewWrap">
+<img alt="preview" class="w-full h-44 object-cover" id="imagePreview"/>
+</div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 py-3 rounded-2xl bg-[#F5F0FC] text-[#8B6FC9] font-semibold hover:bg-[#E9D8FD] transition-colors" data-action="close-composer">Cancel</button>
+<button class="flex-1 py-3 rounded-2xl bg-gradient-to-r from-[#B79CE8] to-[#EFA3C0] text-white font-semibold shadow hover:shadow-lg hover:scale-[1.02] transition-all" data-action="save-note"><i class="fas fa-heart mr-2"></i>Keep it</button>
+</div>
+</div>
+</div>
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-6 bg-[#4A4258]/30 backdrop-blur-sm" id="sparkModal">
+<div class="w-full max-w-md bg-white rounded-[2rem] shadow-2xl p-8 animate__animated animate__zoomIn animate__faster">
+<div class="flex items-center justify-between mb-4">
+<h2 class="display-font italic text-2xl text-[#5C4B8B]"><i class="fas fa-bolt text-[#F5B98A] mr-2"></i>Sparks</h2>
+<button class="w-9 h-9 rounded-full bg-[#F5F0FC] text-[#8B6FC9] hover:bg-[#E9D8FD] transition-colors" data-action="close-spark"><i class="fas fa-xmark"></i></button>
+</div>
+<p class="text-xs text-[#8A7FA0] mb-4" id="sparkSubtitle"></p>
+<div class="space-y-3" id="sparkList"></div>
+</div>
+</div>
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-6 bg-[#4A4258]/30 backdrop-blur-sm" id="recapModal">
+<div class="w-full max-w-md bg-white rounded-[2rem] shadow-2xl p-8 animate__animated animate__zoomIn animate__faster">
+<div class="flex items-center justify-between mb-4">
+<h2 class="display-font italic text-2xl text-[#5C4B8B]"><i class="fas fa-wand-magic-sparkles text-[#B79CE8] mr-2"></i>Recap</h2>
+<button class="w-9 h-9 rounded-full bg-[#F5F0FC] text-[#8B6FC9] hover:bg-[#E9D8FD] transition-colors" data-action="close-recap"><i class="fas fa-xmark"></i></button>
+</div>
+<div class="space-y-4 text-sm text-[#4A4258]" id="recapBody"></div>
+</div>
+</div>
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] space-y-2 pointer-events-none" id="toastWrap"></div>
+<script>
+(function () {
+  'use strict';
+
+  /* ============================ CONSTANTS ============================ */
+  const STORAGE_KEY = 'trips_adventures_v1';
+  const MAX_DAYS = 31;
+  const MOODS = ['☀️', '🌧️', '🏔️', '🌊', '🌸', '✨', '🎬', '🌈'];
+  const QUICK_TAGS = ['b-roll', 'interview', 'drone', 'sound', 'golden hour', 'edit note'];
+  const QUOTES = [
+    '“We shoot with our hearts, then fix it in post.”',
+    '“Every frame a postcard, every note a keepsake.”',
+    '“Chase the light. Write it down.”',
+    '“Adventure is the best director.”',
+    '“Small moments make the final cut.”'
+  ];
+  const BLOCKS = {
+    morning: {
+      label: 'Morning', icon: 'fa-cloud-sun',
+      wrap: 'bg-[#FFF6EC] ring-1 ring-[#FFE3C7]',
+      head: 'text-[#C07A3E]', chip: 'bg-[#FFE3C7] text-[#9A5B2B]',
+      btn: 'bg-[#FFE3C7] text-[#9A5B2B] hover:bg-[#FBD3A5]'
+    },
+    afternoon: {
+      label: 'Afternoon', icon: 'fa-sun',
+      wrap: 'bg-[#EDF9F1] ring-1 ring-[#CDEFE3]',
+      head: 'text-[#3E8D6C]', chip: 'bg-[#CDEFE3] text-[#2C6B50]',
+      btn: 'bg-[#CDEFE3] text-[#2C6B50] hover:bg-[#B4E5D2]'
+    },
+    evening: {
+      label: 'Evening', icon: 'fa-moon',
+      wrap: 'bg-[#F1EDFB] ring-1 ring-[#E0D5F5]',
+      head: 'text-[#7B5FBF]', chip: 'bg-[#E4DAF8] text-[#5C4B8B]',
+      btn: 'bg-[#E4DAF8] text-[#5C4B8B] hover:bg-[#D3C2F0]'
+    }
+  };
+
+  /* ============================ STATE ============================ */
+  let state = null;
+  let query = '';
+  let composerCtx = null;       // { mode, date, block, noteId }
+  let activeType = 'text';
+  let sortables = [];
+  let lastAiCall = 0;
+  let popSound = null;
+
+  /* ============================ UTILITIES ============================ */
+  const $ = (sel) => document.querySelector(sel);
+  const uid = () => 'n' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+
+  function escapeHtml(str) {
+    return String(str || '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function fmtDate(iso) {
+    try {
+      const [y, m, d] = iso.split('-').map(Number);
+      const dt = new Date(y, m - 1, d);
+      return {
+        weekday: dt.toLocaleDateString(undefined, { weekday: 'long' }),
+        short: dt.toLocaleDateString(undefined, { weekday: 'short' }),
+        pretty: dt.toLocaleDateString(undefined, { month: 'long', day: 'numeric' }),
+        dayNum: d
+      };
+    } catch (e) { return { weekday: '', short: '', pretty: iso, dayNum: '' }; }
+  }
+
+  function datesInRange(start, end) {
+    const out = [];
+    const [sy, sm, sd] = start.split('-').map(Number);
+    const [ey, em, ed] = end.split('-').map(Number);
+    let cur = new Date(sy, sm - 1, sd);
+    const last = new Date(ey, em - 1, ed);
+    while (cur <= last && out.length <= MAX_DAYS) {
+      const y = cur.getFullYear();
+      const m = String(cur.getMonth() + 1).padStart(2, '0');
+      const d = String(cur.getDate()).padStart(2, '0');
+      out.push(`${y}-${m}-${d}`);
+      cur.setDate(cur.getDate() + 1);
+    }
+    return out;
+  }
+
+  function toast(msg, tone) {
+    const colors = { ok: 'bg-[#DCF3E8] text-[#2C6B50]', warn: 'bg-[#FFE9E0] text-[#C06A4A]', info: 'bg-[#EDE4FB] text-[#7B5FBF]' };
+    const el = document.createElement('div');
+    el.className = `pointer-events-auto px-5 py-3 rounded-full shadow-lg text-sm font-semibold animate__animated animate__fadeInUp animate__faster ${colors[tone] || colors.info}`;
+    el.textContent = msg;
+    $('#toastWrap').appendChild(el);
+    setTimeout(() => {
+      el.classList.remove('animate__fadeInUp');
+      el.classList.add('animate__fadeOut');
+      setTimeout(() => el.remove(), 600);
+    }, 2600);
+  }
+
+  function playPop() {
+    try {
+      if (!popSound) {
+        popSound = new Audio('https://cdn.simulationtheory.ai/gasset/?asset=sound&prompt=soft gentle pop ui confirmation');
+        popSound.volume = 0.35;
+      }
+      popSound.currentTime = 0;
+      popSound.play().catch(() => {});
+    } catch (e) { /* audio is a garnish, never a blocker */ }
+  }
+
+  /* ============================ PERSISTENCE ============================ */
+  function save() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch (e) { toast('Could not save locally', 'warn'); }
+  }
+
+  function load() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !parsed.dates || !Array.isArray(parsed.dates)) return null;
+      return parsed;
+    } catch (e) { return null; }
+  }
+
+  /* ============================ TRIP LIFECYCLE ============================ */
+  function createTrip(title, start, end) {
+    const dates = datesInRange(start, end);
+    state = { title: title || 'Untitled Adventure', startDate: start, endDate: end, dates, days: {} };
+    dates.forEach(d => {
+      state.days[d] = { mood: '', blocks: { morning: [], afternoon: [], evening: [] } };
+    });
+    save();
+  }
+
+  function beginFromSetup() {
+    const start = $('#startDate').value;
+    const end = $('#endDate').value;
+    if (!start || !end) { toast('Please pick both dates ✈️', 'warn'); return; }
+    let s = start, e = end;
+    if (s > e) { const t = s; s = e; e = t; }
+    const range = datesInRange(s, e);
+    if (range.length > MAX_DAYS) { toast(`Max ${MAX_DAYS} days per trip — keep it punchy!`, 'warn'); return; }
+    createTrip($('#tripTitle').value.trim(), s, e);
+    showApp();
+    toast('Adventure begun! 🎬', 'ok');
+  }
+
+  function newTrip() {
+    if (!confirm('Start a fresh trip? Current notes stay saved until you begin the new one — but the new trip will replace them. Export first if you want a copy!')) return;
+    localStorage.removeItem(STORAGE_KEY);
+    state = null;
+    $('#appScreen').classList.add('hidden');
+    $('#setupScreen').classList.remove('hidden');
+    $('#startDate').value = '';
+    $('#endDate').value = '';
+    $('#tripTitle').value = '';
+  }
+
+  /* ============================ RENDERING ============================ */
+  function noteMatches(note) {
+    if (!query) return true;
+    const q = query.toLowerCase();
+    const hay = [note.content, note.url, note.caption, (note.tags || []).join(' ')].join(' ').toLowerCase();
+    return hay.includes(q);
+  }
+
+  function renderNote(note) {
+    const hidden = noteMatches(note) ? '' : 'hidden';
+    const actions = `
+      <div class="absolute top-2 right-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+        <button data-action="edit-note" data-id="${note.id}" class="w-7 h-7 rounded-full bg-white/90 text-[#8B6FC9] text-xs shadow hover:bg-[#E9D8FD]"><i class="fas fa-pen pointer-events-none"></i></button>
+        <button data-action="delete-note" data-id="${note.id}" class="w-7 h-7 rounded-full bg-white/90 text-[#C06A4A] text-xs shadow hover:bg-[#FFE0CC]"><i class="fas fa-trash-can pointer-events-none"></i></button>
+      </div>`;
+    const handle = `<span class="drag-handle absolute top-2.5 left-2.5 text-[#C9BEDD] cursor-grab active:cursor-grabbing opacity-0 group-hover:opacity-100 transition-opacity"><i class="fas fa-grip-vertical text-xs pointer-events-none"></i></span>`;
+    const tags = (note.tags && note.tags.length)
+      ? `<div class="flex flex-wrap gap-1.5 mt-2">${note.tags.map(t => `<span class="px-2 py-0.5 rounded-full bg-white/80 text-[10px] font-semibold text-[#8B6FC9] ring-1 ring-[#E9D8FD]">#${escapeHtml(t)}</span>`).join('')}</div>`
+      : '';
+
+    if (note.type === 'link') {
+      let host = '';
+      try { host = new URL(note.url).hostname.replace('www.', ''); } catch (e) { host = 'link'; }
+      return `<article class="note group relative bg-white/90 rounded-2xl p-3.5 pl-8 shadow-sm hover:shadow-md transition-shadow ${hidden}" data-id="${note.id}">
+        ${handle}${actions}
+        <a href="${escapeHtml(note.url)}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 min-w-0">
+          <span class="shrink-0 w-9 h-9 rounded-xl bg-[#DCF3E8] flex items-center justify-center text-[#3E8D6C]"><i class="fas fa-link"></i></span>
+          <span class="min-w-0">
+            <span class="block text-sm font-semibold text-[#3E7D63] truncate">${escapeHtml(note.caption || host)}</span>
+            <span class="block text-[11px] text-[#A5A0B5] truncate">${escapeHtml(note.url)}</span>
+          </span>
+        </a>${tags}
+      </article>`;
+    }
+    if (note.type === 'image') {
+      return `<article class="note group relative bg-white/90 rounded-2xl p-2 shadow-sm hover:shadow-md transition-shadow overflow-hidden ${hidden}" data-id="${note.id}">
+        ${handle}${actions}
+        <img src="${escapeHtml(note.url)}" alt="${escapeHtml(note.caption || 'note image')}" loading="lazy"
+          class="w-full h-36 object-cover rounded-xl"
+          onerror="this.outerHTML='<div class=\\'w-full h-24 rounded-xl bg-[#FBF7F2] flex items-center justify-center text-xs text-[#C9BEDD]\\'><i class=\\'fas fa-image-slash mr-2\\'></i>image unavailable</div>'">
+        ${note.caption ? `<p class="text-xs text-[#8A7FA0] italic px-1.5 pt-1.5">${escapeHtml(note.caption)}</p>` : ''}${tags}
+      </article>`;
+    }
+    return `<article class="note group relative bg-white/90 rounded-2xl p-3.5 pl-8 shadow-sm hover:shadow-md transition-shadow ${hidden}" data-id="${note.id}">
+      ${handle}${actions}
+      <p class="text-sm text-[#4A4258] whitespace-pre-wrap leading-relaxed">${escapeHtml(note.content)}</p>
+      ${tags}
+    </article>`;
+  }
+
+  function renderBlock(dateIso, blockKey) {
+    const cfg = BLOCKS[blockKey];
+    const notes = state.days[dateIso].blocks[blockKey];
+    const visible = notes.filter(noteMatches).length;
+    const body = notes.length
+      ? notes.map(renderNote).join('')
+      : `<div class="empty-hint rounded-2xl border-2 border-dashed border-white/80 py-6 text-center text-xs text-[#B8AFC9] italic">nothing yet — add a moment</div>`;
+    return `
+    <div class="rounded-3xl ${cfg.wrap} p-4 flex flex-col gap-3">
+      <div class="flex items-center justify-between">
+        <span class="inline-flex items-center gap-2 font-bold text-sm ${cfg.head}">
+          <i class="fas ${cfg.icon}"></i>${cfg.label}
+          <span class="px-2 py-0.5 rounded-full text-[10px] ${cfg.chip}">${query ? visible + '/' : ''}${notes.length}</span>
+        </span>
+        <span class="flex gap-1.5">
+          <button data-action="ai-spark" data-date="${dateIso}" data-block="${blockKey}" title="AI shot ideas"
+            class="w-8 h-8 rounded-full ${cfg.btn} text-xs transition-colors"><i class="fas fa-bolt pointer-events-none"></i></button>
+          <button data-action="open-composer" data-date="${dateIso}" data-block="${blockKey}" title="Add"
+            class="w-8 h-8 rounded-full ${cfg.btn} text-xs transition-colors"><i class="fas fa-plus pointer-events-none"></i></button>
+        </span>
+      </div>
+      <div class="note-list flex flex-col gap-2.5 min-h-[3rem]" data-date="${dateIso}" data-block="${blockKey}">${body}</div>
+    </div>`;
+  }
+
+  function renderDay(dateIso, index) {
+    const f = fmtDate(dateIso);
+    const day = state.days[dateIso];
+    const total = ['morning', 'afternoon', 'evening'].reduce((n, b) => n + day.blocks[b].length, 0);
+    const moodBtns = MOODS.map(m =>
+      `<button data-action="set-mood" data-date="${dateIso}" data-mood="${m}"
+        class="text-lg leading-none rounded-full w-8 h-8 transition-all ${day.mood === m ? 'bg-white shadow scale-110' : 'opacity-40 hover:opacity-100 hover:scale-110'}">${m}</button>`).join('');
+    return `
+    <section id="day-${dateIso}" class="bg-white/60 backdrop-blur-md rounded-[2rem] shadow-lg shadow-purple-50 ring-1 ring-white p-5 sm:p-7 scroll-mt-40">
+      <header class="flex flex-wrap items-center gap-3 mb-5">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#E9D8FD] to-[#FBD9E5] flex flex-col items-center justify-center shadow-inner">
+          <span class="text-[9px] uppercase tracking-widest font-bold text-[#8B6FC9]">${f.short}</span>
+          <span class="display-font text-xl text-[#5C4B8B] leading-none">${f.dayNum}</span>
+        </div>
+        <div class="mr-auto">
+          <h3 class="display-font italic text-xl sm:text-2xl text-[#5C4B8B]">${f.weekday}, ${f.pretty} ${day.mood || ''}</h3>
+          <p class="text-[11px] uppercase tracking-widest text-[#B29ADB] font-semibold">Day ${index + 1} · ${total} moment${total === 1 ? '' : 's'}</p>
+        </div>
+        <div class="flex gap-1 bg-[#F5F0FC]/80 rounded-full px-2 py-1">${moodBtns}</div>
+      </header>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        ${renderBlock(dateIso, 'morning')}
+        ${renderBlock(dateIso, 'afternoon')}
+        ${renderBlock(dateIso, 'evening')}
+      </div>
+    </section>`;
+  }
+
+  function renderNav() {
+    $('#dayNav').innerHTML = state.dates.map((d, i) => {
+      const f = fmtDate(d);
+      const count = ['morning', 'afternoon', 'evening'].reduce((n, b) => n + state.days[d].blocks[b].length, 0);
+      return `<button data-action="jump-day" data-date="${d}"
+        class="shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${count ? 'bg-[#E4DAF8] text-[#5C4B8B] hover:bg-[#D3C2F0]' : 'bg-[#F5F0FC] text-[#B8AFC9] hover:bg-[#E9D8FD] hover:text-[#8B6FC9]'}">
+        ${f.short} ${f.dayNum}${count ? ` · ${count}` : ''}</button>`;
+    }).join('');
+  }
+
+  function renderAll() {
+    if (!state) return;
+    $('#titleEdit').value = state.title;
+    const s = fmtDate(state.startDate), e = fmtDate(state.endDate);
+    $('#rangeBanner').innerHTML = `
+      <p class="uppercase tracking-[0.35em] text-[10px] text-[#B29ADB] font-bold mb-1">your canvas</p>
+      <h2 class="display-font italic text-2xl sm:text-3xl text-[#5C4B8B]">${s.pretty} <span class="text-[#EFA3C0]">→</span> ${e.pretty}
+      <span class="text-sm not-italic font-sans text-[#B8AFC9]">· ${state.dates.length} day${state.dates.length === 1 ? '' : 's'}</span></h2>`;
+    renderNav();
+    sortables.forEach(sb => { try { sb.destroy(); } catch (e) {} });
+    sortables = [];
+    $('#daysContainer').innerHTML = state.dates.map((d, i) => renderDay(d, i)).join('');
+    document.querySelectorAll('.note-list').forEach(el => {
+      sortables.push(new Sortable(el, {
+        group: 'trip-notes', animation: 180, handle: '.drag-handle',
+        filter: '.empty-hint', ghostClass: 'sortable-ghost', chosenClass: 'sortable-chosen',
+        onEnd: onDragEnd
+      }));
+    });
+  }
+
+  function onDragEnd(evt) {
+    try {
+      const fd = evt.from.dataset.date, fb = evt.from.dataset.block;
+      const td = evt.to.dataset.date, tb = evt.to.dataset.block;
+      const src = state.days[fd].blocks[fb];
+      // adjust index if placeholder hints shift DOM (placeholder is filtered so indexes align with notes)
+      const moved = src.splice(evt.oldIndex, 1)[0];
+      if (!moved) { renderAll(); return; }
+      state.days[td].blocks[tb].splice(evt.newIndex, 0, moved);
+      save();
+      renderAll();
+    } catch (e) { renderAll(); }
+  }
+
+  function showApp() {
+    $('#setupScreen').classList.add('hidden');
+    $('#appScreen').classList.remove('hidden');
+    renderAll();
+  }
+
+  /* ============================ COMPOSER ============================ */
+  function setActiveType(type) {
+    activeType = type;
+    document.querySelectorAll('.type-tab').forEach(btn => {
+      const on = btn.dataset.type === type;
+      btn.className = 'type-tab flex-1 py-2.5 rounded-2xl text-sm font-semibold transition-all ' +
+        (on ? 'bg-gradient-to-r from-[#B79CE8] to-[#EFA3C0] text-white shadow' : 'bg-[#F5F0FC] text-[#8B6FC9] hover:bg-[#E9D8FD]');
+    });
+    $('#paneText').classList.toggle('hidden', type !== 'text');
+    $('#paneLink').classList.toggle('hidden', type !== 'link');
+    $('#paneImage').classList.toggle('hidden', type !== 'image');
+  }
+
+  function openComposer(date, block, noteId) {
+    composerCtx = { mode: noteId ? 'edit' : 'add', date, block, noteId: noteId || null };
+    $('#noteContent').value = ''; $('#noteTags').value = '';
+    $('#linkUrl').value = ''; $('#linkLabel').value = '';
+    $('#imageUrl').value = ''; $('#imagePrompt').value = ''; $('#imageCaption').value = '';
+    $('#imagePreviewWrap').classList.add('hidden');
+    let type = 'text';
+    if (noteId) {
+      const note = state.days[date].blocks[block].find(n => n.id === noteId);
+      if (note) {
+        type = note.type;
+        if (note.type === 'text') { $('#noteContent').value = note.content || ''; $('#noteTags').value = (note.tags || []).join(', '); }
+        if (note.type === 'link') { $('#linkUrl').value = note.url || ''; $('#linkLabel').value = note.caption || ''; }
+        if (note.type === 'image') {
+          $('#imageUrl').value = note.url || ''; $('#imageCaption').value = note.caption || '';
+          if (note.url) { $('#imagePreview').src = note.url; $('#imagePreviewWrap').classList.remove('hidden'); }
+        }
+      }
+    }
+    const f = fmtDate(date);
+    $('#composerTitle').textContent = `${noteId ? 'Edit' : 'New'} · ${BLOCKS[block].label}, ${f.short} ${f.dayNum}`;
+    setActiveType(type);
+    $('#composerModal').classList.remove('hidden');
+    setTimeout(() => { if (type === 'text') $('#noteContent').focus(); }, 60);
+  }
+
+  function closeComposer() { $('#composerModal').classList.add('hidden'); composerCtx = null; }
+
+  function saveFromComposer() {
+    if (!composerCtx) return;
+    const { date, block, noteId } = composerCtx;
+    let note;
+    if (activeType === 'text') {
+      const content = $('#noteContent').value.trim();
+      if (!content) { toast('Write a little something first ✍️', 'warn'); return; }
+      const tags = $('#noteTags').value.split(',').map(t => t.trim().replace(/^#/, '')).filter(Boolean).slice(0, 8);
+      note = { type: 'text', content, tags };
+    } else if (activeType === 'link') {
+      const url = $('#linkUrl').value.trim();
+      try { new URL(url); } catch (e) { toast('That link looks off — include https:// 🔗', 'warn'); return; }
+      note = { type: 'link', url, caption: $('#linkLabel').value.trim() };
+    } else {
+      const url = $('#imageUrl').value.trim();
+      if (!url) { toast('Paste an image URL or generate one 🖼️', 'warn'); return; }
+      note = { type: 'image', url, caption: $('#imageCaption').value.trim() };
+    }
+    const list = state.days[date].blocks[block];
+    if (noteId) {
+      const idx = list.findIndex(n => n.id === noteId);
+      if (idx > -1) list[idx] = Object.assign({}, list[idx], note);
+    } else {
+      note.id = uid();
+      note.created = new Date().toISOString();
+      list.push(note);
+      playPop();
+    }
+    save(); renderAll(); closeComposer();
+    toast(noteId ? 'Moment updated 💫' : 'Moment kept 💖', 'ok');
+  }
+
+  function generateImage() {
+    const prompt = $('#imagePrompt').value.trim();
+    if (!prompt) { toast('Describe the image first ✨', 'warn'); return; }
+    const url = `https://cdn.simulationtheory.ai/gasset/?asset=img&prompt=${encodeURIComponent(prompt + ', soft pastel aesthetic, dreamy')}&w=800&h=500&style=professional`;
+    $('#imageUrl').value = url;
+    $('#imagePreview').src = url;
+    $('#imagePreviewWrap').classList.remove('hidden');
+    toast('Dreaming up your image… 🎨', 'info');
+  }
+
+  /* ============================ AI FEATURES ============================ */
+  function aiReady() {
+    const now = Date.now();
+    if (now - lastAiCall < 5200) { toast('The muse needs a breather — try again in a few seconds ⏳', 'warn'); return false; }
+    lastAiCall = now;
+    return true;
+  }
+
+  async function aiSpark(date, block, btn) {
+    if (!aiReady()) return;
+    const icon = btn.querySelector('i');
+    const orig = icon.className;
+    icon.className = 'fas fa-spinner fa-spin pointer-events-none';
+    btn.disabled = true;
+    try {
+      const existing = state.days[date].blocks[block]
+        .map(n => n.type === 'text' ? n.content : (n.caption || n.url)).filter(Boolean).slice(0, 6).join(' | ') || 'none yet';
+      const f = fmtDate(date);
+      const res = await window.call_llm(
+        'You are a hip, imaginative creative director for travel and adventure video projects. Suggest fresh, specific, filmable ideas. Respond in the exact JSON fields requested.',
+        [{ role: 'user', content: `Trip: "${state.title}". Day: ${f.weekday} ${f.pretty}, time of day: ${BLOCKS[block].label}. Existing notes: ${existing}. Give 3 punchy filming/shot/story ideas (max 14 words each) that complement the existing notes.` }],
+        [{ ideas: 'a JSON array of exactly 3 short filming idea strings' }]
+      );
+      let ideas = res && res.ideas;
+      if (typeof ideas === 'string') {
+        try { ideas = JSON.parse(ideas); }
+        catch (e) { ideas = ideas.split(/\n+/).map(s => s.replace(/^[\d\.\-\*\s]+/, '').trim()).filter(Boolean); }
+      }
+      if (!Array.isArray(ideas) || !ideas.length) throw new Error('no ideas');
+      openSparkModal(date, block, ideas.slice(0, 3));
+    } catch (e) {
+      toast('The muse is quiet right now — try again shortly 🌙', 'warn');
+    } finally {
+      icon.className = orig;
+      btn.disabled = false;
+    }
+  }
+
+  function openSparkModal(date, block, ideas) {
+    const f = fmtDate(date);
+    $('#sparkSubtitle').textContent = `Ideas for ${BLOCKS[block].label.toLowerCase()} · ${f.weekday}, ${f.pretty}. Tap to keep one.`;
+    $('#sparkList').innerHTML = ideas.map((idea) =>
+      `<button data-action="add-spark" data-date="${date}" data-block="${block}" data-idea="${escapeHtml(String(idea))}"
+        class="w-full text-left rounded-2xl bg-[#FBF9FE] ring-1 ring-[#E9D8FD] px-4 py-3 text-sm text-[#4A4258] hover:bg-[#EDE4FB] hover:scale-[1.01] transition-all flex items-center gap-3">
+        <span class="shrink-0 w-8 h-8 rounded-xl bg-gradient-to-br from-[#B79CE8] to-[#EFA3C0] text-white flex items-center justify-center text-xs"><i class="fas fa-plus pointer-events-none"></i></span>
+        <span>${escapeHtml(String(idea))}</span></button>`).join('');
+    $('#sparkModal').classList.remove('hidden');
+  }
+
+  async function aiRecap(btn) {
+    const rows = collectRows();
+    if (!rows.length) { toast('Add some notes first — then I can recap ✨', 'warn'); return; }
+    if (!aiReady()) return;
+    $('#recapBody').innerHTML = `<div class="text-center py-8 text-[#B29ADB]"><i class="fas fa-wand-magic-sparkles fa-beat text-3xl"></i><p class="mt-3 text-xs">summoning the recap…</p></div>`;
+    $('#recapModal').classList.remove('hidden');
+    try {
+      const digest = rows.slice(0, 60).map(r => `${r.date} ${r.time_of_day}: [${r.type}] ${r.content || r.url || ''}`).join('\n');
+      const res = await window.call_llm(
+        'You are a stylish, warm producer reviewing a video project trip journal. Respond in the exact JSON fields requested.',
+        [{ role: 'user', content: `Project: "${state.title}" (${state.startDate} to ${state.endDate}).\nNotes:\n${digest}` }],
+        [{ recap: 'a 2-3 sentence warm, stylish recap of this project so far' }, { tip: 'one smart actionable next-step tip for this video project' }]
+      );
+      $('#recapBody').innerHTML = `
+        <div class="rounded-2xl bg-[#F5F0FC] p-4"><p class="text-[10px] uppercase tracking-widest font-bold text-[#B29ADB] mb-1.5">the story so far</p><p class="leading-relaxed">${escapeHtml(res.recap || '')}</p></div>
+        <div class="rounded-2xl bg-[#EDF9F1] p-4"><p class="text-[10px] uppercase tracking-widest font-bold text-[#7FC8A9] mb-1.5"><i class="fas fa-lightbulb mr-1"></i>producer's tip</p><p class="leading-relaxed text-[#2C6B50]">${escapeHtml(res.tip || '')}</p></div>`;
+    } catch (e) {
+      $('#recapBody').innerHTML = `<p class="text-center text-sm text-[#C06A4A] py-6">The muse is quiet — try again in a moment 🌙</p>`;
+    }
+  }
+
+  /* ============================ EXPORT ============================ */
+  function collectRows() {
+    const rows = [];
+    if (!state) return rows;
+    state.dates.forEach(date => {
+      const day = state.days[date];
+      const f = fmtDate(date);
+      ['morning', 'afternoon', 'evening'].forEach(block => {
+        day.blocks[block].forEach(n => {
+          rows.push({
+            trip: state.title, date, weekday: f.weekday, mood: day.mood || '',
+            time_of_day: block, type: n.type,
+            content: n.content || n.caption || '', url: n.url || '',
+            tags: (n.tags || []).join(' '), created: n.created || ''
+          });
+        });
+      });
+    });
+    return rows;
+  }
+
+  function exportCsv() {
+    const rows = collectRows();
+    if (!rows.length) { toast('Nothing to export yet — add a moment first!', 'warn'); return; }
+    try {
+      window.save_data_to_csv('trips_and_adventures_notes.csv', rows);
+      toast(`Exported ${rows.length} moment${rows.length === 1 ? '' : 's'} 📦`, 'ok');
+    } catch (e) { toast('Export failed — try again', 'warn'); }
+  }
+
+  /* ============================ EVENT WIRING ============================ */
+  function handleAction(btn) {
+    const a = btn.dataset.action;
+    if (a === 'open-composer') openComposer(btn.dataset.date, btn.dataset.block, null);
+    else if (a === 'close-composer') closeComposer();
+    else if (a === 'save-note') saveFromComposer();
+    else if (a === 'generate-image') generateImage();
+    else if (a === 'set-mood') {
+      const day = state.days[btn.dataset.date];
+      day.mood = (day.mood === btn.dataset.mood) ? '' : btn.dataset.mood;
+      save(); renderAll();
+    }
+    else if (a === 'edit-note' || a === 'delete-note') {
+      const id = btn.dataset.id;
+      const list = btn.closest('.note-list');
+      const date = list.dataset.date, block = list.dataset.block;
+      if (a === 'edit-note') openComposer(date, block, id);
+      else {
+        const arr = state.days[date].blocks[block];
+        const idx = arr.findIndex(n => n.id === id);
+        if (idx > -1) { arr.splice(idx, 1); save(); renderAll(); toast('Moment released 🕊️', 'info'); }
+      }
+    }
+    else if (a === 'ai-spark') aiSpark(btn.dataset.date, btn.dataset.block, btn);
+    else if (a === 'close-spark') $('#sparkModal').classList.add('hidden');
+    else if (a === 'add-spark') {
+      const list = state.days[btn.dataset.date].blocks[btn.dataset.block];
+      list.push({ id: uid(), type: 'text', content: btn.dataset.idea, tags: ['spark'], created: new Date().toISOString() });
+      save(); renderAll(); playPop();
+      $('#sparkModal').classList.add('hidden');
+      toast('Spark kept ⚡', 'ok');
+    }
+    else if (a === 'ai-recap') aiRecap(btn);
+    else if (a === 'close-recap') $('#recapModal').classList.add('hidden');
+    else if (a === 'export-csv') exportCsv();
+    else if (a === 'new-trip') newTrip();
+    else if (a === 'jump-day') {
+      const el = document.getElementById('day-' + btn.dataset.date);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function init() {
+    const q = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+    $('#setupQuote').textContent = q;
+    $('#footerQuote').textContent = q;
+
+    $('#quickTags').innerHTML = QUICK_TAGS.map(t =>
+      `<button type="button" data-qtag="${t}" class="px-3 py-1 rounded-full bg-[#F5F0FC] text-[11px] font-semibold text-[#8B6FC9] ring-1 ring-[#E9D8FD] hover:bg-[#E9D8FD] transition-colors">#${t}</button>`).join('');
+
+    document.addEventListener('click', (e) => {
+      const actBtn = e.target.closest('[data-action]');
+      if (actBtn) { handleAction(actBtn); return; }
+      const tab = e.target.closest('.type-tab');
+      if (tab) { setActiveType(tab.dataset.type); return; }
+      const qt = e.target.closest('[data-qtag]');
+      if (qt) {
+        const input = $('#noteTags');
+        const cur = input.value.split(',').map(s => s.trim()).filter(Boolean);
+        if (!cur.includes(qt.dataset.qtag)) { cur.push(qt.dataset.qtag); input.value = cur.join(', '); }
+        return;
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeComposer();
+        $('#sparkModal').classList.add('hidden');
+        $('#recapModal').classList.add('hidden');
+      }
+    });
+
+    $('#beginBtn').addEventListener('click', beginFromSetup);
+
+    $('#titleEdit').addEventListener('change', (e) => {
+      state.title = e.target.value.trim() || 'Untitled Adventure';
+      save();
+      toast('Title updated ✒️', 'info');
+    });
+
+    let searchTimer = null;
+    $('#searchBox').addEventListener('input', (e) => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => { query = e.target.value.trim(); renderAll(); }, 220);
+    });
+
+    const today = new Date();
+    const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    $('#startDate').value = iso(today);
+    const plus4 = new Date(today); plus4.setDate(plus4.getDate() + 4);
+    $('#endDate').value = iso(plus4);
+
+    const saved = load();
+    if (saved) { state = saved; showApp(); }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>
